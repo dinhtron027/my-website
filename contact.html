@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đinh Trọng – Liên hệ Trực tuyến &amp; Gửi Tin nhắn Hỗ trợ Nhanh</title>
+    <meta name="description"
+        content="Liên hệ trực tiếp với Đinh Trọng qua email, số điện thoại hoặc gửi tin nhắn qua biểu mẫu trực tuyến để trao đổi về các dự án web và cơ hội hợp tác mới.">
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Đinh Trọng</h1>
+            <p>Trang thông tin cá nhân &amp; Các dự án học tập</p>
+        </div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="contact.html" class="active">Liên hệ</a>
+            <a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Thông tin liên hệ trực tiếp -->
+        <section id="contact-info">
+            <h2>Thông tin liên hệ</h2>
+            <div class="card">
+                <p>Nếu bạn có bất kỳ câu hỏi nào, cơ hội hợp tác hoặc muốn trao đổi về các dự án công nghệ, xin vui lòng
+                    liên hệ với tôi qua các kênh dưới đây hoặc gửi qua biểu mẫu trực tuyến:</p>
+
+                <ul class="contact-info">
+                    <li>
+                        <strong>Email cá nhân:</strong>
+                        <a href="mailto:cutrong236@email.com">cutrong236@email.com</a>
+                    </li>
+                    <li>
+                        <strong>Số điện thoại:</strong>
+                        <a href="tel:+84333940923">0333 940 923</a>
+                    </li>
+                    <li>
+                        <strong>Địa chỉ:</strong> TPHCM, Việt Nam
+                    </li>
+                    <li>
+                        <strong>Thời gian phản hồi:</strong>
+                        Từ <time datetime="08:00">08:00</time> đến <time datetime="18:00">18:00</time> (Thứ Hai – Thứ
+                        Sáu)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Form liên hệ hoàn chỉnh (Bài tập 03) -->
+        <section id="contact-form-section">
+            <h2>Liên hệ với tôi</h2>
+            <div class="card">
+                <!-- Hộp thông báo phản hồi trạng thái -->
+                <div id="form-notification" class="form-alert" style="display: none;" role="alert"></div>
+
+                <form id="contact-form" action="#" method="POST">
+                    <!-- Fieldset 1: Thông tin cá nhân -->
+                    <fieldset>
+                        <legend>Thông tin cá nhân</legend>
+
+                        <label for="fullname">Họ và tên: *</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên đầy đủ" required
+                            minlength="2" maxlength="100">
+
+                        <!-- 23. (Nâng cao) Trường Ngày sinh -->
+                        <label for="dob">Ngày sinh:</label>
+                        <input type="date" id="dob" name="dob">
+
+                        <!-- 24. (Nâng cao) Datalist gợi ý trường đại học -->
+                        <label for="university">Trường đại học:</label>
+                        <input type="text" id="university" name="university" list="university-list"
+                            placeholder="Chọn hoặc nhập tên trường đại học">
+                        <datalist id="university-list">
+                            <option value="Đại học Quốc gia TP.HCM">
+                            <option value="Đại học Bách Khoa">
+                            <option value="Đại học Công nghệ Thông tin (UIT)">
+                            <option value="Đại học Sư phạm Kỹ thuật (HCMUTE)">
+                        </datalist>
+
+                        <label for="email">Email: *</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="09xx xxx xxx" pattern="[0-9]{10,11}"
+                            title="Nhập 10–11 chữ số">
+                    </fieldset>
+
+                    <!-- Fieldset 2: Nội dung liên hệ -->
+                    <fieldset>
+                        <legend>Nội dung liên hệ</legend>
+
+                        <label for="subject">Chủ đề:</label>
+                        <select id="subject" name="subject">
+                            <option value="">-- Chọn chủ đề --</option>
+                            <option value="support">Hỗ trợ kỹ thuật</option>
+                            <option value="study">Học tập / Trao đổi</option>
+                            <option value="other">Khác</option>
+                        </select>
+
+                        <label>Ưu tiên liên hệ qua:</label>
+                        <fieldset>
+                            <legend>Kênh liên hệ</legend>
+                            <input type="radio" id="via-email" name="contact-via" value="email" checked>
+                            <label for="via-email">Email</label>
+
+                            <input type="radio" id="via-phone" name="contact-via" value="phone">
+                            <label for="via-phone">Điện thoại</label>
+
+                            <input type="radio" id="via-zalo" name="contact-via" value="zalo">
+                            <label for="via-zalo">Zalo</label>
+                        </fieldset>
+
+                        <label for="message">Tin nhắn: *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Nhập nội dung tin nhắn..." required
+                            minlength="2" maxlength="500"></textarea>
+
+                        <label for="agree" class="checkbox-label">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <span>Tôi đồng ý với <a href="#">điều khoản sử dụng</a> *</span>
+                        </label>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit">Gửi tin nhắn</button>
+                        <button type="reset">Xoá và nhập lại</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Liên hệ: <a href="mailto:cutrong236@email.com">cutrong236@email.com</a> |
+            Điện thoại: <a href="tel:+84333940923">0333 940 923</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Đinh Trọng. All rights reserved.</p>
+    </footer>
+
+    <!-- Xử lý thông báo thành công và đặt lại form -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const alertBox = document.getElementById('form-notification');
+
+        function showNotification(type, message) {
+            alertBox.className = 'form-alert ' + (type === 'success' ? 'alert-success' : 'alert-info');
+            alertBox.innerHTML = message;
+            alertBox.style.display = 'block';
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (form.checkValidity()) {
+                const name = document.getElementById('fullname').value || 'bạn';
+                showNotification('success', `<strong>✔ Gửi thành công!</strong> Cảm ơn <strong>${name}</strong> đã gửi tin nhắn. Thông tin liên hệ và nội dung tin nhắn của bạn đã được ghi nhận thành công!`);
+                // Giữ nguyên dữ liệu đã nhập trên form, không tự động xoá
+            }
+        });
+
+        form.addEventListener('reset', function () {
+            showNotification('info', '<strong>ℹ Đã xoá và nhập lại!</strong> Toàn bộ dữ liệu trong biểu mẫu đã được làm mới về trạng thái ban đầu.');
+        });
+    </script>
+</body>
+
+</html>

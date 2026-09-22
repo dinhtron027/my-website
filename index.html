@@ -1,29 +1,74 @@
-<!DOCTYPE html>                 <!-- Khai báo đây là HTML5 -->
-<html lang="vi">                <!-- Thẻ gốc, chứa toàn bộ trang -->
-    <head>                      <!-- Phần đầu: thông tin về trang -->
-        <meta charset="UTF-8">  <!-- Cho phép hiển thị tiếng Việt -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NGUYỄN ĐÌNH TRỌNG</title>  <!-- Tiêu đề trên tab trình duyệt -->
+<!DOCTYPE html>
+<html lang="vi">
 
-        <link rel = "stylesheet" href ="css/style.css">
-    </head>
-    <body>                      <!-- Phần thân: nội dung hiển thị -->
-        <h1>NGUYỄN ĐÌNH TRỌNG</h1>
-        <h2>Thông Tin Cá Nhân</h2>
-        <p>Họ và Tên <strong>NGUYỄN ĐÌNH TRỌNG</strong></p>
-        <p>Quê quán: Đồng Nai</p>
-        <p>Ngành học : Kĩ Thuật Phần Mền</p>
-        <p>Năm học : năm 2</p>
-        <h2>Sở Thích</h2>
-        <ul>
-            <li>Lập Trình</li>
-            <li>Đọc Sách</li>
-            <li>Xem Phim</li>
-        </ul>
-        <h2>Mục Tiêu Học Kì Này</h2>
-        <ol>
-            <li>Hoàn thành các môn học với điểm số cao </li>
-            <li>Nâng cao kỹ năng lập trình web và cơ sở dữ liệu </li>
-        </ol>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đinh Trọng – Trang chủ Website Cá nhân &amp; Dự án Lập trình</title>
+    <meta name="description"
+        content="Khám phá website cá nhân của Đinh Trọng với các dự án lập trình web hiện đại, ứng dụng chuẩn Semantic HTML5, CSS Box Model và giao diện thân thiện người dùng.">
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Đinh Trọng</h1>
+            <p>Trang thông tin cá nhân &amp; Các dự án học tập</p>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="contact.html">Liên hệ</a>
+            <a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Phần chào mừng -->
+        <section id="welcome">
+            <h2>Chào mừng bạn đến với Website của tôi</h2>
+            <div class="card">
+                <p>Xin chào! Tôi là Đinh Trọng, một lập trình viên đang trên hành trình khám phá và phát triển các ứng
+                    dụng web hiện đại.</p>
+                <p>Trang web này được xây dựng với mục tiêu thực hành chuẩn cấu trúc Semantic HTML5 và kỹ năng CSS hiện
+                    đại.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Phần dự án -->
+        <section id="projects">
+            <h2>Dự án nổi bật</h2>
+            <div class="card">
+                <h3>Xây dựng Website cá nhân với HTML5 &amp; CSS3</h3>
+                <p class="card-meta">
+                    Thời gian thực hiện: <time datetime="2026-03-15">15/03/2026</time>
+                </p>
+                <p>Dự án ứng dụng toàn diện các thẻ ngữ nghĩa (Semantic HTML5) như header, nav, main, section, footer
+                    cùng kỹ thuật CSS Box Model và Responsive Layout.</p>
+            </div>
+            <div class="card">
+                <h3>Hệ thống quản lý công việc TodoList</h3>
+                <p class="card-meta">
+                    Thời gian hoàn thành: <time datetime="2026-02-28">28/02/2026</time>
+                </p>
+                <p>Ứng dụng web giúp người dùng lập kế hoạch công việc hàng ngày với giao diện trực quan và lưu trữ dữ
+                    liệu cục bộ.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Liên hệ: <a href="mailto:dinhtron027@email.com">dinhtron027@email.com</a> |
+            Điện thoại: <a href="tel:+84333940923">0333 940 923</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Đinh Trọng. All rights reserved.</p>
+    </footer>
+</body>
+
 </html>

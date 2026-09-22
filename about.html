@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đinh Trọng – Giới thiệu Bản thân, Kỹ năng &amp; Lộ trình Học tập</title>
+    <meta name="description"
+        content="Tìm hiểu hành trình phát triển của Đinh Trọng cùng các kỹ năng lập trình web Frontend, lộ trình học tập công nghệ và thời khóa biểu học kỳ chuyên ngành.">
+    <!-- Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Đinh Trọng</h1>
+            <p>Trang thông tin cá nhân &amp; Các dự án học tập</p>
+        </div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html" class="active">Giới thiệu</a>
+            <a href="contact.html">Liên hệ</a>
+            <a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section: Về tôi -->
+        <section id="about-me">
+            <h2>Về tôi</h2>
+            <div class="card">
+                <!-- 8. Thêm ảnh đại diện dùng <figure> + <figcaption> -->
+                <figure>
+                    <img src="https://via.placeholder.com/150"
+                        alt="Ảnh đại diện của Đinh Trọng – sinh viên Công nghệ Thông tin">
+                    <figcaption>Ảnh đại diện của Đinh Trọng</figcaption>
+                </figure>
+
+                <p>Tôi là Đinh Trọng, một sinh viên đam mê công nghệ thông tin với định hướng phát triển trở thành một
+                    Lập trình viên Front-end chuyên nghiệp. Tôi bắt đầu tìm hiểu về lập trình web từ <time
+                        datetime="2024-09">tháng 9 năm 2024</time> và luôn nỗ lực học hỏi các công nghệ mới mỗi ngày.
+                </p>
+                <p class="highlight">Phương châm của tôi: Viết mã nguồn sạch (Clean Code), tối ưu trải nghiệm người dùng
+                    (UX/UI) và luôn tuân thủ các chuẩn Semantic Web.</p>
+                <p>Bên cạnh việc học tập các ngôn ngữ lập trình như HTML5, CSS3 và JavaScript, tôi còn thích tìm hiểu về
+                    thiết kế giao diện, giải quyết thuật toán và tham gia các hoạt động cộng đồng công nghệ.</p>
+
+                <!-- 15. (Nâng cao) Thêm <dl> – 3 cặp thuật ngữ–định nghĩa kỹ năng -->
+                <h3 style="margin-top: 24px;">Thuật ngữ chuyên ngành quan tâm:</h3>
+                <dl class="terms-list">
+                    <dt>Frontend</dt>
+                    <dd>Phần giao diện người dùng của trang web, sử dụng HTML, CSS và JavaScript để xây dựng trải nghiệm
+                        trực quan.</dd>
+
+                    <dt>Backend</dt>
+                    <dd>Phần xử lý logic phía máy chủ, bao gồm quản lý cơ sở dữ liệu, xác thực người dùng và xử lý API.
+                    </dd>
+
+                    <dt>Version Control</dt>
+                    <dd>Hệ thống quản lý phiên bản mã nguồn (như Git), giúp theo dõi thay đổi và cộng tác trong nhóm
+                        phát triển.</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- 9. Section "Kỹ năng" – Danh sách <ul> với 5 kỹ năng -->
+        <section id="skills">
+            <h2>Kỹ năng chuyên môn</h2>
+            <div class="card">
+                <p>Dưới đây là 5 kỹ năng chính tôi đang tập trung rèn luyện và phát triển:</p>
+                <ul class="skill-list">
+                    <li><strong>HTML5:</strong> Nắm vững cấu trúc Semantic, tối ưu SEO, Forms, Tables và Media.</li>
+                    <li><strong>CSS3:</strong> Box Model, Flexbox, Grid Layout, Responsive Design và hiệu ứng mượt mà.
+                    </li>
+                    <li><strong>JavaScript:</strong> Cú pháp ES6+, xử lý sự kiện, thao tác DOM và gọi API bất đồng bộ.
+                    </li>
+                    <li><strong>Git &amp; GitHub:</strong> Quản lý mã nguồn phân tán, giải quyết xung đột và làm việc
+                        nhóm hiệu quả.</li>
+                    <li><strong>Kỹ năng mềm:</strong> Khả năng tự học, tư duy phản biện, tìm kiếm tài liệu và giải quyết
+                        vấn đề.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 10. Section "Lộ trình học tập" – Danh sách <ol> với 3 bước -->
+        <section id="roadmap">
+            <h2>Lộ trình học tập trong học kỳ</h2>
+            <div class="card">
+                <p>Mục tiêu cụ thể được chia thành 3 giai đoạn rõ ràng:</p>
+                <ol class="roadmap-list">
+                    <li><strong>Bước 1:</strong> Hoàn thành khóa học HTML5/CSS3 chuẩn Semantic và xây dựng giao diện
+                        portfolio cá nhân.</li>
+                    <li><strong>Bước 2:</strong> Làm chủ ngôn ngữ JavaScript nền tảng và thực hành xây dựng các ứng dụng
+                        web tương tác (Single Page Mini Apps).</li>
+                    <li><strong>Bước 3:</strong> Tiếp cận các thư viện/framework hiện đại và deploy dự án hoàn chỉnh lên
+                        GitHub Pages/Vercel.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- 11. Section "Môn học" – Bảng <table> đầy đủ cấu trúc -->
+        <section id="courses">
+            <h2>Danh sách môn học</h2>
+            <div class="card">
+                <table>
+                    <caption>Bảng thông tin các môn học trong chương trình đào tạo</caption>
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Mã môn</th>
+                            <th>Tên môn học</th>
+                            <th>Số tín chỉ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>IT101</td>
+                            <td>Lập trình Web căn bản</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>IT102</td>
+                            <td>Cấu trúc dữ liệu &amp; Giải thuật</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>IT103</td>
+                            <td>Hệ quản trị Cơ sở dữ liệu</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>IT104</td>
+                            <td>Mạng máy tính &amp; Truyền thông</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Tổng số tín chỉ học kỳ:</strong></td>
+                            <td><strong>13 tín chỉ</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- 16. (Nâng cao) Bảng có rowspan – Lịch học trong tuần -->
+        <section id="schedule">
+            <h2>Lịch học trong tuần</h2>
+            <div class="card">
+                <table>
+                    <caption>Thời khóa biểu các buổi học chuyên ngành</caption>
+                    <thead>
+                        <tr>
+                            <th>Thứ</th>
+                            <th>Buổi</th>
+                            <th>Môn học</th>
+                            <th>Phòng học</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2"><strong>Thứ Hai</strong></td>
+                            <td>Sáng</td>
+                            <td>Lập trình Web (Lý thuyết)</td>
+                            <td>A2-301</td>
+                        </tr>
+                        <tr>
+                            <td>Chiều</td>
+                            <td>Thực hành Lập trình Web</td>
+                            <td>LAB-02</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thứ Ba</strong></td>
+                            <td>Sáng</td>
+                            <td>Cấu trúc dữ liệu &amp; Giải thuật</td>
+                            <td>B1-205</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>Thứ Tư</strong></td>
+                            <td>Sáng</td>
+                            <td>Hệ quản trị Cơ sở dữ liệu (Lý thuyết)</td>
+                            <td>A1-102</td>
+                        </tr>
+                        <tr>
+                            <td>Chiều</td>
+                            <td>Thực hành Cơ sở dữ liệu</td>
+                            <td>LAB-01</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Ghi chú: Sinh viên có mặt trước giờ học 15 phút và mang theo đầy đủ tài liệu
+                                môn học.</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- 12. Footer với đầy đủ liên kết mailto và tel -->
+    <footer>
+        <address>
+            Liên hệ: <a href="mailto:dinhtron027@email.com">dinhtron027@email.com</a> |
+            Điện thoại: <a href="tel:+84333940923">0333 940 923</a>
+        </address>
+        <p>&copy; <time datetime="2026">2026</time> Đinh Trọng. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
