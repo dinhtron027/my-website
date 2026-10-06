@@ -1,0 +1,28 @@
+// ============================================================
+// _variables.scss – Biến dùng chung toàn bộ project
+// ============================================================
+
+// 1. Màu sắc chính
+$color-primary: #7b91be; // xanh đậm – header, navbar, tiêu đề
+$color-secondary: #1d6fa4; // xanh dương – hero section
+$color-text: #1e293b; // màu chữ chính
+$color-text-muted: #64748b; // màu chữ phụ / mô tả
+$color-bg: #f4f7fb; // nền trang
+$color-white: #ffffff;
+
+// 2. Typography
+$font-base: 'Inter', Arial, sans-serif;
+
+// 3. Spacing (khoảng cách cơ bản)
+$spacing: 16px; // 1 đơn vị spacing
+
+// 4. Border radius
+$radius: 8px;
+
+// 5. Box shadow
+$shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+// 6. Breakpoints
+$bp-tablet: 768px;
+$bp-desktop: 1024px;

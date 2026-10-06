@@ -1,0 +1,16 @@
+// ============================================================
+// main.scss – Entry point: @use 5 partials đúng thứ tự
+// ============================================================
+//
+// Thứ tự @use rất quan trọng:
+//   1. variables  – biến, không có CSS output
+//   2. reset      – CSS reset + body base
+//   3. components – mixins + components (card, navbar, form...)
+//   4. layout     – layout lớn (hero, grid, sidebar, footer...)
+//   5. responsive – media queries cuối cùng
+//
+@use 'variables';
+@use 'reset';
+@use 'components';
+@use 'layout';
+@use 'responsive';

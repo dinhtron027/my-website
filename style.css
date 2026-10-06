@@ -18,40 +18,36 @@ body {
     min-height: 100vh;
 }
 
-/* 3. Header Styling */
+/* 3. Header & Navbar Styling */
 header {
     background-color: #1a2e5a;
-    padding: 16px 32px;
-    color: white;
+}
+
+.navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
+    justify-content: space-between; /* logo trái, nav phải */
+    align-items: center;            /* căn giữa dọc */
+    padding: 16px 32px;
+    background-color: #1a2e5a;
 }
 
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 0.95rem;
-    color: #cbd5e1;
-    margin-top: 4px;
+.logo {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 /* 4. Navigation Styling */
-header nav a {
+.nav-links a {
     color: #93c5fd;
-    margin-left: 20px;
+    margin-left: 24px;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease-in-out;
 }
 
-header nav a:hover,
-header nav a.active {
+.nav-links a:hover,
+.nav-links a.active {
     color: white;
     text-decoration: underline;
 }
@@ -63,6 +59,12 @@ main {
     padding: 32px 16px;
     flex: 1;
     width: 100%;
+}
+
+/* Main wide layout cho index.html (hero + cards-grid) */
+.main-wide {
+    max-width: 1100px;
+    padding: 0 0 48px;
 }
 
 main section {
@@ -114,30 +116,96 @@ main p {
 footer {
     background: #1e293b;
     color: #94a3b8;
-    text-align: center;
-    padding: 24px;
+    padding: 20px 32px;
     margin-top: auto;
 }
 
-footer address {
-    font-style: normal;
-    margin-bottom: 8px;
+/* (Nâng cao) Footer dùng Flexbox: bản quyền trái, link phải */
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-footer address a {
+.footer-flex p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-links address {
+    font-style: normal;
+}
+
+.footer-links address a {
     color: #93c5fd;
     text-decoration: none;
 }
 
-footer address a:hover {
+.footer-links address a:hover {
     text-decoration: underline;
 }
 
-footer p {
-    font-size: 0.9rem;
+/* 8. Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background-color: #1d6fa4;
+    color: white;
+    text-align: center;
+    padding: 48px 24px;
+    gap: 16px;
 }
 
-/* 9. Highlight Styling */
+.hero h2 {
+    font-size: 2rem;
+    border: none;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.hero p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 9. Cards Grid */
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;   /* cards tự xuống dòng khi hết chỗ */
+    gap: 24px;
+    margin: 32px 32px 0;
+}
+
+.cards-grid .card {
+    flex: 1;
+    min-width: 250px;  /* tự xuống dòng khi < 250px */
+    margin-bottom: 0;
+}
+
+/* 10. Button Primary */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: white;
+    color: #1a2e5a;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e2e8f0;
+}
+
+/* 11. Highlight Styling */
 .highlight {
     background: #fef3c7;
     padding: 4px 8px;
@@ -455,5 +523,178 @@ button[type="reset"]:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   BÀI TẬP 03: CSS Grid & Responsive Mobile-first
+   ============================================================ */
+
+/* 1. Page Layout – Mobile-first: mặc định 1 cột, sidebar ẩn */
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr;           /* Mobile: 1 cột */
+    grid-template-areas:
+        "main";                           /* sidebar ẩn trên mobile */
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    width: 100%;
+}
+
+/* (Nâng cao) grid-template-areas: đặt tên vùng thay số cột */
+.page-layout > main {
+    grid-area: main;
+    min-width: 0;                         /* tránh overflow trong grid */
+}
+
+.page-layout > aside.sidebar {
+    grid-area: sidebar;
+    display: none;                        /* ẩn trên mobile */
+}
+
+/* 2. Sidebar styling */
+.sidebar {
+    background: #f1f5f9;
+    padding: 24px;
+    border-radius: 8px;
+    align-self: start;                    /* không kéo dài theo chiều cao main */
+    border: 1px solid #e2e8f0;
+}
+
+.sidebar h2 {
+    font-size: 1.1rem;
+    color: #1a2e5a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.sidebar-info {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.sidebar-info li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9f0f8;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.sidebar-info li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-info strong {
+    color: #1e293b;
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2px;
+}
+
+.sidebar-info a {
+    color: #1a2e5a;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.sidebar-info a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.sidebar-badge span {
+    background: #1a2e5a;
+    color: white;
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* 3. Skills Grid – CSS Grid với auto-fill */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.skill-card {
+    background: white;
+    padding: 20px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 3px solid #1a2e5a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(26, 46, 90, 0.15);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.skill-card h3 {
+    font-size: 1rem;
+    color: #1a2e5a;
+    margin-bottom: 6px;
+}
+
+.skill-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   Media Queries – Mobile-first
+   ============================================================ */
+
+/* Breakpoint 768px: 2 cột + sidebar hiện */
+@media (min-width: 768px) {
+    .page-layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "sidebar main";               /* sidebar trái, main phải */
+    }
+
+    .page-layout > aside.sidebar {
+        display: block;                   /* hiện sidebar */
+    }
+}
+
+/* Breakpoint 1024px: sidebar rộng hơn (240px) */
+@media (min-width: 1024px) {
+    .page-layout {
+        grid-template-columns: 240px 1fr;
+    }
+}
+
+/* (Nâng cao) Orientation landscape trên mobile – thu nhỏ hero */
+@media (orientation: landscape) and (max-width: 767px) {
+    .hero {
+        min-height: 180px;
+        padding: 24px 16px;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
     }
 }

@@ -11,24 +11,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
-        <div>
-            <h1>Đinh Trọng</h1>
-            <p>Trang thông tin cá nhân &amp; Các dự án học tập</p>
+        <div class="navbar">
+            <div class="logo">Đinh Trọng</div>
+            <nav class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html" class="active">Giới thiệu</a>
+                <a href="contact.html">Liên hệ</a>
+                <a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">GitHub</a>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Trang chủ</a>
-            <a href="about.html" class="active">Giới thiệu</a>
-            <a href="contact.html">Liên hệ</a>
-            <a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">GitHub</a>
-        </nav>
     </header>
 
-    <main>
+    <!-- CSS Grid Page Layout: sidebar + main -->
+    <div class="page-layout">
+
+        <!-- Sidebar (hiện tại ẩn trên mobile, hiện ở tablet+) -->
+        <aside class="sidebar">
+            <h2>Thông tin</h2>
+            <ul class="sidebar-info">
+                <li><strong>Họ tên:</strong> Đinh Trọng</li>
+                <li><strong>Chuyên ngành:</strong> Kỹ thuật Phần mềm</li>
+                <li><strong>Trường:</strong> ĐH Gia Định</li>
+                <li><strong>Năm:</strong> 2026</li>
+                <li><strong>Email:</strong><br><a href="mailto:dinhtron027@email.com">dinhtron027@email.com</a></li>
+                <li><strong>GitHub:</strong><br><a href="https://github.com/dinhtron027/my-website" target="_blank" rel="noopener">dinhtron027</a></li>
+            </ul>
+            <div class="sidebar-badge">
+                <span>💡 Frontend Dev</span>
+                <span>📚 Đang học</span>
+                <span>🚀 Open to work</span>
+            </div>
+        </aside>
+
+        <!-- Nội dung chính -->
+        <main>
         <!-- Section: Về tôi -->
         <section id="about-me">
             <h2>Về tôi</h2>
@@ -67,22 +88,42 @@
             </div>
         </section>
 
-        <!-- 9. Section "Kỹ năng" – Danh sách <ul> với 5 kỹ năng -->
+        <!-- 9. Section "Kỹ năng" với skills-grid -->
         <section id="skills">
             <h2>Kỹ năng chuyên môn</h2>
-            <div class="card">
-                <p>Dưới đây là 5 kỹ năng chính tôi đang tập trung rèn luyện và phát triển:</p>
-                <ul class="skill-list">
-                    <li><strong>HTML5:</strong> Nắm vững cấu trúc Semantic, tối ưu SEO, Forms, Tables và Media.</li>
-                    <li><strong>CSS3:</strong> Box Model, Flexbox, Grid Layout, Responsive Design và hiệu ứng mượt mà.
-                    </li>
-                    <li><strong>JavaScript:</strong> Cú pháp ES6+, xử lý sự kiện, thao tác DOM và gọi API bất đồng bộ.
-                    </li>
-                    <li><strong>Git &amp; GitHub:</strong> Quản lý mã nguồn phân tán, giải quyết xung đột và làm việc
-                        nhóm hiệu quả.</li>
-                    <li><strong>Kỹ năng mềm:</strong> Khả năng tự học, tư duy phản biện, tìm kiếm tài liệu và giải quyết
-                        vấn đề.</li>
-                </ul>
+            <p style="margin-bottom:16px;">Dưới đây là 5 kỹ năng chính tôi đang tập trung rèn luyện và phát triển:</p>
+            <!-- CSS Grid skills-grid -->
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <span class="skill-icon">🏠</span>
+                    <h3>HTML5</h3>
+                    <p>Semantic, SEO, Forms, Tables &amp; Media</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🎨</span>
+                    <h3>CSS3</h3>
+                    <p>Box Model, Flexbox, Grid &amp; Responsive</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">⚡</span>
+                    <h3>JavaScript</h3>
+                    <p>ES6+, DOM, Events &amp; Async API</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🐙</span>
+                    <h3>Git &amp; GitHub</h3>
+                    <p>Version control, branches &amp; collaboration</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">📱</span>
+                    <h3>Responsive</h3>
+                    <p>Mobile-first, Media Queries &amp; Grid</p>
+                </div>
+                <div class="skill-card">
+                    <span class="skill-icon">🧠</span>
+                    <h3>Kỹ năng mềm</h3>
+                    <p>Tự học, tư duy phản biện &amp; giải quyết vấn đề</p>
+                </div>
             </div>
         </section>
 
@@ -205,15 +246,20 @@
                 </table>
             </div>
         </section>
-    </main>
+        </main>
+    </div><!-- end .page-layout -->
 
     <!-- 12. Footer với đầy đủ liên kết mailto và tel -->
     <footer>
-        <address>
-            Liên hệ: <a href="mailto:dinhtron027@email.com">dinhtron027@email.com</a> |
-            Điện thoại: <a href="tel:+84333940923">0333 940 923</a>
-        </address>
-        <p>&copy; <time datetime="2026">2026</time> Đinh Trọng. All rights reserved.</p>
+        <div class="footer-flex">
+            <p>&copy; <time datetime="2026">2026</time> Đinh Trọng. All rights reserved.</p>
+            <div class="footer-links">
+                <address>
+                    <a href="mailto:dinhtron027@email.com">dinhtron027@email.com</a> |
+                    <a href="tel:+84333940923">0333 940 923</a>
+                </address>
+            </div>
+        </div>
     </footer>
 </body>
 

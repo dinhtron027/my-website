@@ -1,0 +1,176 @@
+// ============================================================
+// _layout.scss – Layout: main, hero, cards-grid, page-layout,
+//                sidebar, skills-grid, footer
+// ============================================================
+@use 'variables' as *;
+
+// -----------------------------------------------------------
+// MAIN CONTENT
+// -----------------------------------------------------------
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $spacing * 2 $spacing;
+    flex: 1;
+    width: 100%;
+}
+
+// Main wide dành riêng cho index.html (hero + cards-grid)
+.main-wide {
+    max-width: 1100px;
+    padding: 0 0 $spacing * 3;
+}
+
+main section {
+    margin-bottom: $spacing * 2;
+
+    &:last-child { margin-bottom: 0; }
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: $spacing;
+    color: $color-primary;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+main p {
+    margin-bottom: 14px;
+}
+
+// -----------------------------------------------------------
+// HERO SECTION – flex-direction: column, căn giữa
+// -----------------------------------------------------------
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background-color: $color-secondary;
+    color: $color-white;
+    text-align: center;
+    padding: $spacing * 3 $spacing * 1.5;
+    gap: $spacing;
+
+    h2 {
+        font-size: 2rem;
+        border: none;
+        color: $color-white;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+}
+
+// -----------------------------------------------------------
+// CARDS GRID – flex-wrap responsive
+// -----------------------------------------------------------
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing * 1.5;
+    margin: $spacing * 2 $spacing * 2 0;
+
+    .card {
+        flex: 1;
+        min-width: 250px;   // tự xuống dòng khi < 250px
+        margin-bottom: 0;
+    }
+}
+
+// -----------------------------------------------------------
+// PAGE LAYOUT – CSS Grid: sidebar + main (Mobile-first)
+// -----------------------------------------------------------
+.page-layout {
+    display: grid;
+    grid-template-columns: 1fr;           // Mobile: 1 cột
+    grid-template-areas: "main";          // sidebar ẩn trên mobile
+
+    // (Nâng cao) dùng grid-template-areas thay số cột
+    gap: $spacing * 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: $spacing * 2 $spacing;
+    width: 100%;
+
+    > main {
+        grid-area: main;
+        min-width: 0;                     // tránh overflow trong grid
+    }
+
+    > aside.sidebar {
+        grid-area: sidebar;
+        display: none;                    // ẩn trên mobile
+    }
+}
+
+// -----------------------------------------------------------
+// SIDEBAR
+// -----------------------------------------------------------
+.sidebar {
+    background: #f1f5f9;
+    padding: $spacing * 1.5;
+    border-radius: $radius;
+    align-self: start;
+    border: 1px solid #e2e8f0;
+
+    h2 {
+        font-size: 1.1rem;
+        color: $color-primary;
+        margin-bottom: $spacing;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e2e8f0;
+    }
+}
+
+// -----------------------------------------------------------
+// SKILLS GRID – CSS Grid auto-fill
+// -----------------------------------------------------------
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: $spacing;
+    margin-top: 8px;
+}
+
+// -----------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------
+footer {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 20px $spacing * 2;
+    margin-top: auto;
+}
+
+// (Nâng cao) Footer dùng Flexbox: bản quyền trái, link phải
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+}
+
+.footer-links address {
+    font-style: normal;
+
+    a {
+        color: #93c5fd;
+        text-decoration: none;
+
+        &:hover { text-decoration: underline; }
+    }
+}

@@ -1,0 +1,496 @@
+// ============================================================
+// _components.scss – Mixins & Components tái sử dụng
+// ============================================================
+@use 'variables' as *;
+
+// -----------------------------------------------------------
+// MIXINS
+// -----------------------------------------------------------
+
+/// Mixin: flex-center – căn giữa theo Flexbox
+/// @param {String} $direction - row (ngang) hoặc column (dọc)
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+/// Mixin: card-style – kiểu card với nền trắng, shadow
+@mixin card-style() {
+    background: $color-white;
+    padding: $spacing * 1.5;
+    border-radius: $radius;
+    box-shadow: $shadow;
+}
+
+// -----------------------------------------------------------
+// HEADER & NAVBAR – áp dụng mixin flex-center
+// -----------------------------------------------------------
+header {
+    background-color: $color-primary;
+}
+
+.navbar {
+    @include flex-center();               // display:flex, align-items:center, justify-content:center
+    justify-content: space-between;       // override: logo trái, nav phải
+    padding: $spacing $spacing * 2;
+    background-color: $color-primary;
+}
+
+.logo {
+    color: $color-white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #93c5fd;
+    margin-left: $spacing * 1.5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: $color-white;
+    text-decoration: underline;
+}
+
+// -----------------------------------------------------------
+// CARD – áp dụng mixin card-style
+// -----------------------------------------------------------
+.card {
+    @include card-style();
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        color: #0f172a;
+        margin-bottom: 8px;
+    }
+}
+
+.card-meta {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    margin-bottom: 12px;
+}
+
+// -----------------------------------------------------------
+// BUTTON PRIMARY
+// -----------------------------------------------------------
+.btn-primary {
+    display: inline-block;
+    padding: 10px $spacing * 1.5;
+    background-color: $color-white;
+    color: $color-primary;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: #e2e8f0;
+    }
+}
+
+// -----------------------------------------------------------
+// HIGHLIGHT
+// -----------------------------------------------------------
+.highlight {
+    background: #fef3c7;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+// -----------------------------------------------------------
+// CONTACT INFO
+// -----------------------------------------------------------
+.contact-info {
+    list-style: none;
+    margin-top: $spacing;
+
+    li {
+        padding: 10px 0;
+        border-bottom: 1px solid #f1f5f9;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    strong {
+        color: $color-text;
+        min-width: 140px;
+        display: inline-block;
+    }
+}
+
+// -----------------------------------------------------------
+// FIGURE & AVATAR
+// -----------------------------------------------------------
+figure {
+    text-align: center;
+    margin: 20px auto;
+
+    img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        box-shadow: $shadow-md;
+        border: 3px solid $color-primary;
+    }
+}
+
+figcaption {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+// -----------------------------------------------------------
+// LISTS
+// -----------------------------------------------------------
+ul.skill-list,
+ol.roadmap-list {
+    margin-left: $spacing * 1.5;
+    margin-top: 12px;
+
+    li {
+        margin-bottom: 8px;
+        color: #334155;
+    }
+}
+
+// Definition list
+dl.terms-list {
+    margin-top: $spacing;
+
+    dt {
+        font-weight: 600;
+        color: $color-primary;
+        margin-top: 12px;
+        font-size: 1.05rem;
+    }
+
+    dd {
+        margin-left: $spacing;
+        margin-top: 4px;
+        color: #475569;
+    }
+}
+
+// -----------------------------------------------------------
+// TABLES
+// -----------------------------------------------------------
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: $spacing;
+    background: $color-white;
+    font-size: 0.95rem;
+
+    caption {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: $color-primary;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    th,
+    td {
+        border: 1px solid #cbd5e1;
+        padding: 10px 14px;
+        text-align: left;
+    }
+
+    thead th {
+        background-color: $color-primary;
+        color: $color-white;
+        font-weight: 600;
+    }
+
+    tbody {
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover           { background-color: #f1f5f9; }
+    }
+
+    tfoot td {
+        background-color: #f1f5f9;
+        font-style: italic;
+        color: #475569;
+    }
+}
+
+// -----------------------------------------------------------
+// FORMS
+// -----------------------------------------------------------
+form {
+    margin-top: $spacing;
+}
+
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: $radius;
+    padding: 20px;
+    margin-bottom: $spacing * 1.5;
+    background-color: $color-white;
+}
+
+legend {
+    font-weight: 600;
+    color: $color-primary;
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+
+form label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #334155;
+    font-size: 0.95rem;
+
+    &:first-of-type { margin-top: 0; }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: $color-text;
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        background-color: $color-white;
+        box-shadow: 0 0 0 3px rgba(26, 46, 90, 0.15);
+    }
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+// Inner fieldset – radio buttons
+fieldset fieldset {
+    margin-top: 8px;
+    margin-bottom: $spacing;
+    padding: 12px $spacing;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: $spacing;
+    flex-wrap: wrap;
+
+    legend { font-size: 0.95rem; font-weight: 500; }
+
+    label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        cursor: pointer;
+        font-weight: normal;
+    }
+
+    input[type="radio"] {
+        cursor: pointer;
+        margin-right: 4px;
+    }
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: $spacing;
+    cursor: pointer;
+    font-weight: normal;
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    a {
+        color: $color-primary;
+        text-decoration: underline;
+    }
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    padding: 12px $spacing * 1.5;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"] {
+    background-color: $color-primary;
+    color: $color-white;
+    border: 1.5px solid $color-primary;
+
+    &:hover {
+        background-color: #243c72;
+        border-color: #243c72;
+        box-shadow: 0 4px 10px rgba(26, 46, 90, 0.25);
+    }
+}
+
+button[type="reset"] {
+    background-color: $color-white;
+    color: $color-text-muted;
+    border: 1.5px solid #cbd5e1;
+
+    &:hover {
+        background-color: #f1f5f9;
+        color: #334155;
+        border-color: #94a3b8;
+    }
+}
+
+// -----------------------------------------------------------
+// ALERT NOTIFICATIONS
+// -----------------------------------------------------------
+.form-alert {
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+
+    &.alert-success {
+        background-color: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+    }
+
+    &.alert-info {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        border: 1px solid #7dd3fc;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+// -----------------------------------------------------------
+// SIDEBAR COMPONENTS
+// -----------------------------------------------------------
+.sidebar-info {
+    list-style: none;
+    font-size: 0.9rem;
+
+    li {
+        padding: 8px 0;
+        border-bottom: 1px solid #e9f0f8;
+        color: #475569;
+        line-height: 1.5;
+
+        &:last-child { border-bottom: none; }
+    }
+
+    strong {
+        color: $color-text;
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 2px;
+    }
+
+    a {
+        color: $color-primary;
+        text-decoration: none;
+        word-break: break-all;
+
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.sidebar-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: $spacing;
+
+    span {
+        background: $color-primary;
+        color: $color-white;
+        font-size: 0.8rem;
+        padding: 4px 10px;
+        border-radius: 20px;
+        text-align: center;
+    }
+}
+
+// -----------------------------------------------------------
+// SKILL CARDS – CSS Grid item
+// -----------------------------------------------------------
+.skill-card {
+    @include card-style();
+    text-align: center;
+    border-top: 3px solid $color-primary;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(26, 46, 90, 0.15);
+    }
+
+    h3 {
+        font-size: 1rem;
+        color: $color-primary;
+        margin-bottom: 6px;
+    }
+
+    p {
+        font-size: 0.85rem;
+        color: $color-text-muted;
+        margin-bottom: 0;
+    }
+}
+
+.skill-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}

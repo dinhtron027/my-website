@@ -1,0 +1,45 @@
+// ============================================================
+// _responsive.scss – Tất cả Media Queries (Mobile-first)
+// ============================================================
+@use 'variables' as *;
+
+// -----------------------------------------------------------
+// Breakpoint 768px: Tablet
+// - page-layout: 2 cột (220px sidebar + 1fr main)
+// - sidebar hiện ra
+// -----------------------------------------------------------
+@media (min-width: #{$bp-tablet}) {
+    .page-layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas: "sidebar main";   // sidebar trái, main phải
+
+        > aside.sidebar {
+            display: block;                    // hiện sidebar
+        }
+    }
+}
+
+// -----------------------------------------------------------
+// Breakpoint 1024px: Desktop
+// - sidebar rộng hơn (240px)
+// -----------------------------------------------------------
+@media (min-width: #{$bp-desktop}) {
+    .page-layout {
+        grid-template-columns: 240px 1fr;
+    }
+}
+
+// -----------------------------------------------------------
+// (Nâng cao) Orientation landscape trên mobile
+// – thu nhỏ hero section khi xoay ngang điện thoại
+// -----------------------------------------------------------
+@media (orientation: landscape) and (max-width: #{$bp-tablet - 1px}) {
+    .hero {
+        min-height: 180px;
+        padding: $spacing * 1.5 $spacing;
+
+        h2 {
+            font-size: 1.4rem;
+        }
+    }
+}
